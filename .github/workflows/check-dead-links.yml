@@ -15,7 +15,7 @@ concurrency:
 jobs:
   check-dead-links:
     if: github.repository == 'awesome-selfhosted/awesome-selfhosted-data'
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.RUNNER_LINUX_X64_4 || 'ubuntu-latest' }}
     steps:
       - uses: actions/checkout@v7
       - run: make install
