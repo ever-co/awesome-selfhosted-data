@@ -27,7 +27,7 @@ jobs:
     environment:
       name: production
       url: https://github.com/awesome-selfhosted/awesome-selfhosted
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.RUNNER_LINUX_X64_4 || 'ubuntu-latest' }}
     steps:
       - uses: actions/checkout@v7
         with:
@@ -46,7 +46,7 @@ jobs:
     environment:
       name: production
       url: https://github.com/awesome-selfhosted/awesome-selfhosted-html
-    runs-on: ubuntu-latest
+    runs-on: ${{ vars.RUNNER_LINUX_X64_4 || 'ubuntu-latest' }}
     steps:
       - uses: actions/checkout@v7
         with:
